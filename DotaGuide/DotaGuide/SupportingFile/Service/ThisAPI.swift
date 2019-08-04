@@ -9,12 +9,16 @@
 import  UIKit
 
 class  ThisAPI {
-    static let baseURL = "http://www.playcybergames.com/dota/heroes.php?hero=1"
+    static let baseURL = "http://www.playcybergames.com/dota/heroes.php?hero="
     
     static func search(key: String, complete: (_ object: Heroes?) -> Void){
-        let tutorialURL = URL(string: "\(ThisAPI.baseURL)\(key)")
+        guard let url = URL(string: "\(ThisAPI.baseURL)\(key)") else {
+            complete(nil)
+            return
+        }
+      
         do {
-            let data = try Data(contentsOf: tutorialURL!)
+            let data = try Data(contentsOf: url)
             let tFHppleObject = TFHpple(htmlData: data)
             let heroes = HTMLMapper<Heroes>().map(tFHpple: tFHppleObject)
             complete(heroes)
@@ -23,8 +27,20 @@ class  ThisAPI {
         }
     }
     
-    static func searchSuggest(key: String, complete: (_ suggests: [String]) -> Void){
+    static func getAllHeroID(complete: (_ object: Heroids?) -> Void){
+        guard let url = URL(string: "\(ThisAPI.baseURL)\(1)") else {
+            complete(nil)
+            return
+        }
         
+        do {
+            let data = try Data(contentsOf: url)
+            let tFHppleObject = TFHpple(htmlData: data)
+            let heroes = HTMLMapper<Heroids>().map(tFHpple: tFHppleObject)
+            complete(heroes)
+        } catch {
+            complete(nil)
+        }
     }
 }
 

@@ -12,6 +12,7 @@ import XCTest
 class DotaGuideTests: XCTestCase {
 
     override func setUp() {
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -20,6 +21,10 @@ class DotaGuideTests: XCTestCase {
     }
 
     func testExample() {
+        ThisAPI.search(key: "22") { (hero) in
+//            <img src="images/heroes/22.jpg" width="64" height="64">
+            XCTAssert(hero?.imageAvatar ?? "" == "images/heroes/22.jpg")
+        }
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

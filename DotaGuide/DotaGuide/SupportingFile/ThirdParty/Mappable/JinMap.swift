@@ -7,23 +7,24 @@
 //
 
 enum MapFrom {
-    case TFHpple
+    case TFHpple 
     case TFHppleElement
     case None
 }
 
 enum MapType {
-    case BaseArray
     case ArrayObject
     case Object
-    case Content
-    case Attribute
+    case Contents
+    case Content(Int)
+    case Attributes(String)
+    case Attribute(String, Int)
 }
 
 final class HTMLMap {
-    internal(set) var currentValue: Any?
-    internal(set) var html: TFHpple?
-    internal(set) var tfElement: TFHppleElement?
+    var currentValue: Any?
+    var html: TFHpple?
+    var tfElement: TFHppleElement?
     
     init(html: TFHpple){
         self.html = html
@@ -37,71 +38,82 @@ final class HTMLMap {
         return map(key: key, mapFrom: mapFrom)
     }
     
-    subscript(key: String, mapFrom: MapFrom, index: Int, isChil: Bool) -> HTMLMap {
-        return map(key: key, mapFrom: mapFrom, index: index, chil: isChil)
+    subscript(key: String, mapFrom: MapFrom, isChil: Bool) -> HTMLMap {
+        return map(key: key, mapFrom: mapFrom, chil: isChil)
     }
     
     subscript(key: String, mapFrom: MapFrom, mapType: MapType ) -> HTMLMap {
         return map(key: key, mapFrom: mapFrom, mapType: mapType)
     }
     
-    subscript(key: String, mapFrom: MapFrom, mapType: MapType , keyValue: String, index: Int, chil: Bool ) -> HTMLMap {
-        return map(key: key, mapFrom: mapFrom, mapType: mapType, keyValue: keyValue, index: index, chil: chil)
-    }
-    
-    subscript(key: String, mapFrom: MapFrom, mapType: MapType , keyValue: String ) -> HTMLMap {
-        return map(key: key, mapFrom: mapFrom, mapType: mapType, keyValue: keyValue)
+    subscript(key: String, mapFrom: MapFrom, mapType: MapType , chil: Bool ) -> HTMLMap {
+        return map(key: key, mapFrom: mapFrom, mapType: mapType, chil: chil)
     }
     
     func value<T>() -> T? {
         return currentValue as? T
     }
     
-    private func map(key: String, mapFrom: MapFrom, mapType: MapType = .Content, keyValue: String = "", index: Int = 0, chil: Bool = false) -> HTMLMap {
+    private func map(key: String, mapFrom: MapFrom, mapType: MapType = .Content(0), chil: Bool = false) -> HTMLMap {
         if html != nil && mapFrom == .TFHpple{
             let nodes = html!.search(withXPathQuery: key)
-            setCurrentValue(nodes: nodes, mapType:  mapType, keyValue: keyValue)
+            setCurrentValue(nodes: nodes, mapType:  mapType)
         } else {
             if tfElement != nil && mapFrom == .TFHppleElement && key != ""{
-                setCurrentValue(nodes: tfElement!.search(withXPathQuery: key), mapType: mapType, keyValue: keyValue, index: index, chil: chil)
+                setCurrentValue(nodes: tfElement!.search(withXPathQuery: key), mapType: mapType)
             } else {
                 if tfElement != nil && mapFrom == .TFHppleElement && key == "" {
-                    setCurrentValue(nodes: [tfElement!], mapType: mapType, keyValue: keyValue, index: index, chil: chil)
+                    setCurrentValue(nodes: [tfElement!], mapType: mapType)
                 }
             }
         }
         return self
     }
     
-    private func setCurrentValue(nodes: [Any]?,  mapType: MapType, keyValue: String, index:  Int = 0, chil: Bool = false){
+    private func setCurrentValue(nodes: [Any]?,  mapType: MapType){
         switch mapType {
-        case .Content:
+        case .Content(let index):
             if index == 0 {
                 currentValue = (nodes?.first as? TFHppleElement)?.content ?? ""
             } else {
-                var listChil = nodes
-                if chil {
-                    listChil = (nodes?.first as? TFHppleElement)?.children
-                }
-                if  (listChil?.count ?? 0) > index {
-                    let chil = listChil![index] as! TFHppleElement
+                if  (nodes?.count ?? 0) > index {
+                    let chil = nodes![index] as! TFHppleElement
                     currentValue = chil.content
                 } else {
                     currentValue = ""
                 }
             }
             break
-        case .Attribute:
+        case .Contents:
+            var contents = [Any]()
+            if let nodes  = nodes {
+                for node in nodes {
+                    contents.append((node as? TFHppleElement)?.content ?? "")
+                }
+            }
+            currentValue = contents
+            break
+        case .Attributes(let keyValue):
+            var contents = [Any]()
+            if let nodes  = nodes {
+                for node in nodes {
+                    let emement = (node as? TFHppleElement)
+                    contents.append(emement?.object(forKey: keyValue) ?? "")
+                }
+            }
+            currentValue = contents
+            break
+        case .Attribute(let keyValue, let index):
             if index == 0 {
                 let chil = nodes?.first as? TFHppleElement
                 currentValue = chil?.object(forKey: keyValue) ?? ""
             } else {
-                var listChil = nodes
-                if chil {
-                    listChil = (nodes?.first as? TFHppleElement)?.children
-                }
-                if  (listChil?.count ?? 0) > index {
-                    let chil = listChil![index] as! TFHppleElement
+//                var listChil = nodes
+//                if chil {
+//                    listChil = (nodes?.first as? TFHppleElement)?.children
+//                }
+                if  (nodes?.count ?? 0) > index {
+                    let chil = nodes![index] as! TFHppleElement
                     currentValue = chil.object(forKey: keyValue) ?? ""
                 } else {
                     currentValue = ""
@@ -110,15 +122,6 @@ final class HTMLMap {
             break
         case .Object:
             currentValue = nodes?.first
-            break
-        case .BaseArray:
-            var contents = [Any]()
-            if let nodes  = nodes {
-                for node in nodes {
-                    contents.append((node as? TFHppleElement)?.content ?? "")
-                }
-            }
-            currentValue = contents
             break
         case .ArrayObject:
             currentValue = nodes

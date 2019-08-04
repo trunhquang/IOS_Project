@@ -18,6 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().barTintColor = UIColor.gray
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: AppFonts.titleNavigationFont, NSAttributedString.Key.foregroundColor: AppColors.whiteColor]
+        
+        ThisAPI.search(key: "22") { (hero) in
+            print("________________________________")
+            print(hero.debugDescription)
+        }
+        
+        ThisAPI.getAllHeroID { heroids in
+            print(heroids?.ids.count)
+        }
         return true
     }
 }
