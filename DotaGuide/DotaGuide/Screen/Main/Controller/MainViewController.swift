@@ -39,7 +39,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<PagerTabCellB
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let itemVC = ItemsIndicatorInfoController()
-        let heroesVC = HeroesIndicatorInfoController()
+        let heroesVC = HeroesIndicatorInfoController.instantiateFromStoryboard(storyboardName: "Main")
         return [heroesVC, itemVC]
     }
     
@@ -48,6 +48,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<PagerTabCellB
     }
     
     private func shadowButtonBar(){
+        buttonBarView.backgroundColor = .clear
         shadowView.layer.shadowColor = UIColor.gray.cgColor
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
         shadowView.layer.shadowOpacity = 0.2
@@ -67,7 +68,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<PagerTabCellB
         changeCurrentIndexProgressive = {  (oldCell: PagerTabCellButtonBarCell?, newCell: PagerTabCellButtonBarCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.title.textColor = AppColors.grayColor
-            newCell?.title.textColor = AppColors.mainColor
+            newCell?.title.textColor = .white
             
         }
     }

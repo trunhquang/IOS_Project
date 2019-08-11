@@ -2,6 +2,7 @@
 import UIKit
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
+let baseURL = "http://www.playcybergames.com/dota/"
 
 struct Screen {
     static let BOUNDS   = UIScreen.main.bounds

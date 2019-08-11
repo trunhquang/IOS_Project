@@ -25,11 +25,15 @@
                                 <rect key="frame" x="0.0" y="117" width="414" height="619"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfS-Zb-Dez">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfS-Zb-Dez">
                                 <rect key="frame" x="0.0" y="64" width="414" height="50"/>
                                 <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator_main" translatesAutoresizingMaskIntoConstraints="NO" id="apO-Ex-RNk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    </imageView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-gf-xaR" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="scrollIndicatorInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wLi-DA-TTg">
                                             <size key="itemSize" width="40" height="40"/>
@@ -40,14 +44,18 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ZAO-gf-xaR" firstAttribute="top" secondItem="vfS-Zb-Dez" secondAttribute="top" id="BKT-bG-CnP"/>
                                     <constraint firstAttribute="height" constant="50" id="FVK-81-XX7"/>
                                     <constraint firstAttribute="bottom" secondItem="ZAO-gf-xaR" secondAttribute="bottom" id="Nlf-nT-Au7"/>
+                                    <constraint firstAttribute="trailing" secondItem="apO-Ex-RNk" secondAttribute="trailing" id="XAl-CV-sSk"/>
                                     <constraint firstAttribute="trailing" secondItem="ZAO-gf-xaR" secondAttribute="trailing" id="g0i-Xg-Q1X"/>
+                                    <constraint firstItem="apO-Ex-RNk" firstAttribute="leading" secondItem="vfS-Zb-Dez" secondAttribute="leading" id="gS6-ss-IpV"/>
                                     <constraint firstItem="ZAO-gf-xaR" firstAttribute="leading" secondItem="vfS-Zb-Dez" secondAttribute="leading" id="iub-Wn-TcV"/>
+                                    <constraint firstItem="apO-Ex-RNk" firstAttribute="top" secondItem="vfS-Zb-Dez" secondAttribute="top" id="kkK-3i-2fr"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="qN9-O1-TAN"/>
+                                    <constraint firstAttribute="bottom" secondItem="apO-Ex-RNk" secondAttribute="bottom" id="qXi-me-udj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -69,11 +77,47 @@
                         <outlet property="buttonBarView" destination="ZAO-gf-xaR" id="hnR-5K-kSk"/>
                         <outlet property="containerView" destination="uid-yP-2F1" id="haq-7q-9Sa"/>
                         <outlet property="shadowView" destination="vfS-Zb-Dez" id="NSe-PV-UVc"/>
+                        <segue destination="BxX-73-95i" kind="show" identifier="HeroesIndicatorInfoController" id="CfA-U4-kjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2628.985507246377" y="132.06521739130434"/>
+        </scene>
+        <!--Heroes Indicator Info Controller-->
+        <scene sceneID="kuq-ak-L24">
+            <objects>
+                <viewController storyboardIdentifier="HeroesIndicatorInfoController" id="BxX-73-95i" customClass="HeroesIndicatorInfoController" customModule="DotaGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KXC-b6-MKw"/>
+                        <viewControllerLayoutGuide type="bottom" id="edG-kJ-BrH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NHY-Jv-UgU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ya4-dI-8gl">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="N3n-p5-SWE" customClass="CommonFlowLayout" customModule="DotaGuide" customModuleProvider="target"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ya4-dI-8gl" firstAttribute="leading" secondItem="NHY-Jv-UgU" secondAttribute="leading" id="2Wd-Fd-kTq"/>
+                            <constraint firstAttribute="trailing" secondItem="Ya4-dI-8gl" secondAttribute="trailing" id="Dm1-sm-L0f"/>
+                            <constraint firstItem="edG-kJ-BrH" firstAttribute="top" secondItem="Ya4-dI-8gl" secondAttribute="bottom" id="fvQ-es-EDT"/>
+                            <constraint firstItem="Ya4-dI-8gl" firstAttribute="top" secondItem="KXC-b6-MKw" secondAttribute="bottom" id="rbH-Gd-LuW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Ya4-dI-8gl" id="8uJ-IX-EMb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PI5-f2-zWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3464" y="-142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjH-zc-sRA">
@@ -94,4 +138,7 @@
             <point key="canvasLocation" x="1721.7391304347827" y="132.06521739130434"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="separator_main" width="500" height="45"/>
+    </resources>
 </document>

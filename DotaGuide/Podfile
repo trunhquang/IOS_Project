@@ -6,7 +6,10 @@ target 'DotaGuide' do
   use_frameworks!
   # Pods for DotaGuide
     pod 'XLPagerTabStrip'
-
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Database'
+    pod 'SDWebImage'
+    
   target 'DotaGuideTests' do
     inherit! :search_paths
     # Pods for testing

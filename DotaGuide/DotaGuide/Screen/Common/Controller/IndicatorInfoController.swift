@@ -17,7 +17,6 @@ class IndicatorInfoController: UIViewController, IndicatorInfoProvider {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
     }
     // MARK: - IndicatorInfoProvider

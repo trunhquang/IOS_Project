@@ -7,54 +7,96 @@
 //
 
 import Foundation
-class Heroes: HTMLMappable {
+import FirebaseDatabase
+
+class Heroes: NSObject, HTMLMappable {
+    var id = ""
     var imageAvatar: String = ""
     var tables: [Table] = [Table]()
     var name: String = ""
-//    var keyWord             : String = ""
-//    var pronunciations      : [OxFordWordPronuncation] = [OxFordWordPronuncation]()
-//    var wordClasses         : [String] = [String]()
-//    var thumUrl             : String = ""
-//    var fullSizeUrl         : String = ""
-//    var verbForms           : [VerdForm] = [VerdForm]()
-//    var extraExamples       : [String] = [String]()
-//    var des                 : [OxFordWordDes] = [OxFordWordDes]()
-//    var idioms              : [String] = [String]()
-//    var phrsalVerbs         : [OxFordWordPhrasal] = [OxFordWordPhrasal]()
-//    var nearbyWords         : [OxFordWordNearBy]  = [OxFordWordNearBy]()
-//    var isLiked             : Bool = false
+    var subName: String = ""
+    var attributes: [String: Any] = [String: Any]()
+    var statisics: [String] = [String]()
+    var type: String = ""
+    
+    var ref: DatabaseReference!
     
     required convenience init?(map: HTMLMap) {
         self.init()
     }
     
+    convenience init?(snapshot: DataSnapshot) {
+        guard
+            let value = snapshot.value as? [String: AnyObject],
+            let id = value["id"] as? String,
+            let avatar = value["avatar"] as? String,
+            let name = value["name"] as? String,
+            let subName = value["subName"] as? String,
+            let type = value["type"] as? String,
+            let attributes = value["attributes"] as?  [String: Any],
+            let statisics = value["statisics"] as? [String] else {
+                return nil
+        }
+        self.init()
+        self.ref = snapshot.ref
+        self.id = id
+        self.imageAvatar = baseURL + avatar
+        self.name = name
+        self.subName = subName
+        self.attributes = attributes
+        self.statisics = statisics
+        self.type = type
+//
+//        "id":id,
+//        "avatar": imageAvatar,
+//        "name": name,
+//        "subName": subName,
+//        "attributes":attributes,
+//        "statisics":statisics,
+//        "type":type
+        
+//        self.key = snapshot.key
+//        self.name = name
+//        self.addedByUser = addedByUser
+//        self.completed = completed
+    }
+    
     func mapping(map: HTMLMap) {
         imageAvatar         <- map["//div[@id='heroes_display_wrap']//td/img", .TFHpple, .Attribute("src", 0)]
         tables              <- map["//div[@id='heroes_display_wrap']//table", .TFHpple, .ArrayObject]
-        print(tables.first?.name)
-        print(tables.first?.subName)
-        print(tables[1].attributes)
-        print(tables[1].images)
-        print(tables[2].statisics)
-        print(tables[3].statisics)
-
-//        imageAvatar               <- map["//div[@class='top-container']/div[@class='top-g']/div[@class='pron-gs ei-g']//span[@class='pron-g']", .TFHpple, .ArrayObject]
-//        wordClasses                  <- map["//div[@class='top-container']//div[@class='webtop-g']//span[@class='pos']", .TFHpple, .BaseArray]
-//        thumUrl                      <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='sn-gs']/li[@class='sn-g']/div[@id='ox-enlarge']/a[@class='topic']/img[@class='thumb']", .TFHpple, .Attribute, "src"]
-//        fullSizeUrl                  <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='sn-gs']/li[@class='sn-g']/div[@id='ox-enlarge']/a[@class='topic']", .TFHpple, .Attribute, "href"]
-//        verbForms                    <- map["//div[@class='top-container']/div[@class='top-g']/span[@class='collapse']//span[@class='body']/span[@class='vp-g']", .TFHpple, .ArrayObject]
-//        idioms                       <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='idm-gs']//span[@class='x']", .TFHpple, .BaseArray]
-//        extraExamples                <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='res-g']/span[@title='Extra examples']//span[@class='x']", .TFHpple, .BaseArray]
-//        des                <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='sn-gs']", .TFHpple, .ArrayObject]
-//        phrsalVerbs        <- map["//div[@class='entry']/ol[@class='h-g']/span[@class='pv-gs']//a[@class='Ref']", .TFHpple, .ArrayObject]
-//        nearbyWords        <- map["//div[@class='responsive_entry_center_right']/div[@class='responsive_row nearby']/ul[@class='list-col']/li/a", .TFHpple, .ArrayObject]
+        name = tables.first?.name ?? ""
+        subName = tables.first?.subName ?? ""
+        attributes = tables[1].attributes
+        statisics = tables[2].statisics
+        type = tables[1].type + " " + tables[2].type
+        statisics.append(contentsOf: tables[3].statisics)
+        //        print(tables[2].statisics)
+        //        print(tables[3].statisics)
+    }
+    
+    func addToFirebase(id: String){
+        if ref == nil {
+            ref = Database.database().reference(withPath: "Heros/\(id)")
+        }
+        self.id = id
+        ref.setValue(toAnyObject())
+    }
+    
+    func toAnyObject() -> Any {
+        return ["id":id,
+                "avatar": imageAvatar,
+                "name": name,
+                "subName": subName,
+                "attributes":attributes,
+                "statisics":statisics,
+                "type":type]
     }
 }
 
 
 class Table: HTMLMappable {
     var localMap: HTMLMap!
-    var names: [String] = [String]()
+    var type: String! = "Agility"
     var name: String{
         guard let map = localMap else {
             return ""
@@ -80,9 +122,9 @@ class Table: HTMLMappable {
         return names.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    var attributes: [String]{
+    var attributes: [String: Any]{
         guard let map = localMap else {
-            return [""]
+            return ["":""]
         }
         
         var tmps: [String] = [String]()
@@ -91,7 +133,22 @@ class Table: HTMLMappable {
         for tmp in tmps {
             names += "\(tmp.split(" ").joined(separator:" ")), "
         }
-        return names.split(", ")
+        let result = names.split(", ")
+        let images = self.images
+        if images.first!.contains("-c"){
+            type = "Strength"
+        }
+        if images.last!.contains("-c"){
+            type = "Intelligence"
+        }
+        var dic: [String: Any] = [String: Any]()
+        for (i,ob) in result.enumerated() {
+            let list = ob.split("\r\n")
+            if list.count == 2 {
+                dic[list.first!] = [list.last!, images[i]]
+            }
+        }
+        return dic
     }
     
     var images: [String]{
@@ -121,7 +178,9 @@ class Table: HTMLMappable {
             }
             names += "\(arr.joined(separator:":")),, "
         }
-        return names.split(",, ")
+        let result = names.split(",, ")
+        type = result.first?.split(":").last
+        return result
     }
     
     required convenience init?(map: HTMLMap) {
@@ -130,9 +189,6 @@ class Table: HTMLMappable {
     }
     
     func mapping(map: HTMLMap) {
-//        names <- map["//h1]", .TFHpple, .Attributes("alt")]
-//        print(names)
-//        spelling                  <- map["//span[@class='phon']", .TFHppleElement]
-//        pronounce                 <- map["", .TFHppleElement, .Attribute, "data-src-mp3", 3, true]
+    
     }
 }
