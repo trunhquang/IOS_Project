@@ -116,7 +116,13 @@ extension HeroesIndicatorInfoController: UICollectionViewDataSource {
 }
 
 extension HeroesIndicatorInfoController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? MainItemCollectionViewCell {
+            let vc = HeroDetailViewController.instantiateFromStoryboard(storyboardName: "Main")
+            vc.heroes = cell.model
+            pushVC(vc)
+        }
+    }
 }
 
 //MARK: - Private method

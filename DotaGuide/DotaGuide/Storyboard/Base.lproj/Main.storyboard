@@ -66,7 +66,7 @@
                             <constraint firstAttribute="trailing" secondItem="vfS-Zb-Dez" secondAttribute="trailing" id="aXv-8V-kYP"/>
                             <constraint firstItem="uid-yP-2F1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="idb-f1-yLX"/>
                             <constraint firstAttribute="trailing" secondItem="uid-yP-2F1" secondAttribute="trailing" id="j7W-kf-cqC"/>
-                            <constraint firstAttribute="bottom" secondItem="uid-yP-2F1" secondAttribute="bottom" id="tGx-75-D1N"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uid-yP-2F1" secondAttribute="bottom" id="qNO-ER-vsv"/>
                             <constraint firstItem="vfS-Zb-Dez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v5x-P0-zEZ"/>
                         </constraints>
                     </view>
@@ -113,11 +113,49 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Ya4-dI-8gl" id="8uJ-IX-EMb"/>
+                        <segue destination="6aG-aE-8qe" kind="show" identifier="HeroDetailViewController" id="iXN-se-vrD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PI5-f2-zWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3464" y="-142"/>
+        </scene>
+        <!--Hero Detail View Controller-->
+        <scene sceneID="62z-uD-0T8">
+            <objects>
+                <viewController storyboardIdentifier="HeroDetailViewController" id="6aG-aE-8qe" customClass="HeroDetailViewController" customModule="DotaGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yuq-e7-OJz"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNs-dO-eg1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GVc-Ko-oXn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bFs-WI-qSr">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6aG-aE-8qe" id="bRZ-Ve-CDv"/>
+                                    <outlet property="delegate" destination="6aG-aE-8qe" id="cr0-JG-M8o"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bFs-WI-qSr" firstAttribute="leading" secondItem="GVc-Ko-oXn" secondAttribute="leading" id="6ON-VO-jZ7"/>
+                            <constraint firstItem="bFs-WI-qSr" firstAttribute="top" secondItem="yuq-e7-OJz" secondAttribute="bottom" id="Ozx-zC-zmk"/>
+                            <constraint firstItem="eNs-dO-eg1" firstAttribute="top" secondItem="bFs-WI-qSr" secondAttribute="bottom" id="cZF-9Y-onh"/>
+                            <constraint firstAttribute="trailing" secondItem="bFs-WI-qSr" secondAttribute="trailing" id="s9u-Yt-uLc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bFs-WI-qSr" id="MOa-E3-rSc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1D-ZV-Hhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4275" y="-143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjH-zc-sRA">

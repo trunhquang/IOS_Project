@@ -16,6 +16,12 @@
 		226239A42300070C007B70DE /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239A32300070C007B70DE /* UICollectionView.swift */; };
 		226239A623000E42007B70DE /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239A523000E42007B70DE /* UIViewController.swift */; };
 		226239A823001BDD007B70DE /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239A723001BDD007B70DE /* CollectionType.swift */; };
+		226239AA2300547C007B70DE /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239A92300547C007B70DE /* HeroDetailViewController.swift */; };
+		226239AE230060A3007B70DE /* HeroesIdentifyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239AC230060A3007B70DE /* HeroesIdentifyTableViewCell.swift */; };
+		226239AF230060A3007B70DE /* HeroesIdentifyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226239AD230060A3007B70DE /* HeroesIdentifyTableViewCell.xib */; };
+		226239B1230060E4007B70DE /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239B0230060E4007B70DE /* UITableView.swift */; };
+		226239B42300656E007B70DE /* HeroesAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226239B22300656E007B70DE /* HeroesAttributesTableViewCell.swift */; };
+		226239B52300656E007B70DE /* HeroesAttributesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */; };
 		226FDC5422F722F90086CBC1 /* Heroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226FDC5322F722F90086CBC1 /* Heroids.swift */; };
 		226FDC5622F72BB50086CBC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FDC5522F72BB40086CBC1 /* GoogleService-Info.plist */; };
 		22DE92A122F52B68005B1821 /* DotaGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE92A022F52B68005B1821 /* DotaGuideTests.swift */; };
@@ -130,6 +136,12 @@
 		226239A32300070C007B70DE /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		226239A523000E42007B70DE /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		226239A723001BDD007B70DE /* CollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
+		226239A92300547C007B70DE /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		226239AC230060A3007B70DE /* HeroesIdentifyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesIdentifyTableViewCell.swift; sourceTree = "<group>"; };
+		226239AD230060A3007B70DE /* HeroesIdentifyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesIdentifyTableViewCell.xib; sourceTree = "<group>"; };
+		226239B0230060E4007B70DE /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		226239B22300656E007B70DE /* HeroesAttributesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesAttributesTableViewCell.swift; sourceTree = "<group>"; };
+		226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesAttributesTableViewCell.xib; sourceTree = "<group>"; };
 		226FDC5322F722F90086CBC1 /* Heroids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroids.swift; sourceTree = "<group>"; };
 		226FDC5522F72BB40086CBC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22DE928822F52B66005B1821 /* DotaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -286,9 +298,21 @@
 				2262399F23000379007B70DE /* ImageView.swift */,
 				226239A32300070C007B70DE /* UICollectionView.swift */,
 				226239A723001BDD007B70DE /* CollectionType.swift */,
+				226239B0230060E4007B70DE /* UITableView.swift */,
 				226239A523000E42007B70DE /* UIViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		226239AB23005FBA007B70DE /* DetailHeroesCell */ = {
+			isa = PBXGroup;
+			children = (
+				226239AC230060A3007B70DE /* HeroesIdentifyTableViewCell.swift */,
+				226239B22300656E007B70DE /* HeroesAttributesTableViewCell.swift */,
+				226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */,
+				226239AD230060A3007B70DE /* HeroesIdentifyTableViewCell.xib */,
+			);
+			path = DetailHeroesCell;
 			sourceTree = "<group>";
 		};
 		22DE927F22F52B65005B1821 = {
@@ -417,6 +441,7 @@
 			children = (
 				22DE92D322F58885005B1821 /* MainViewController.swift */,
 				22DE935D22F5946B005B1821 /* HeroesIndicatorInfoController.swift */,
+				226239A92300547C007B70DE /* HeroDetailViewController.swift */,
 				22DE935F22F59495005B1821 /* ItemsIndicatorInfoController.swift */,
 			);
 			path = Controller;
@@ -441,6 +466,7 @@
 		22DE92D122F58827005B1821 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				226239AB23005FBA007B70DE /* DetailHeroesCell */,
 				2262399322FFFE6B007B70DE /* MainItemCell */,
 				22DE92D522F58900005B1821 /* PagerTabCell */,
 			);
@@ -728,6 +754,8 @@
 				22DE931222F589B2005B1821 /* LICENSE in Resources */,
 				22DE92C822F58627005B1821 /* Main.storyboard in Resources */,
 				22DE92C722F58627005B1821 /* LaunchScreen.storyboard in Resources */,
+				226239B52300656E007B70DE /* HeroesAttributesTableViewCell.xib in Resources */,
+				226239AF230060A3007B70DE /* HeroesIdentifyTableViewCell.xib in Resources */,
 				22DE931322F589B2005B1821 /* README.md in Resources */,
 				22DE92D822F58900005B1821 /* PagerTabCellButtonBarCell.xib in Resources */,
 				22DE92C922F58627005B1821 /* Assets.xcassets in Resources */,
@@ -888,6 +916,7 @@
 				22DE937222F5AE84005B1821 /* XPathQuery.m in Sources */,
 				226FDC5422F722F90086CBC1 /* Heroids.swift in Sources */,
 				22DE933B22F589B2005B1821 /* UIButtonExtensions.swift in Sources */,
+				226239B42300656E007B70DE /* HeroesAttributesTableViewCell.swift in Sources */,
 				22DE937722F5AE84005B1821 /* FromHTML.swift in Sources */,
 				22DE933222F589B2005B1821 /* BlockTap.swift in Sources */,
 				2262399622FFFED7007B70DE /* MainTitleCollectionViewCell.swift in Sources */,
@@ -902,6 +931,7 @@
 				22DE935E22F5946B005B1821 /* HeroesIndicatorInfoController.swift in Sources */,
 				2262399222FFF95D007B70DE /* CommonFlowLayout.swift in Sources */,
 				22DE931D22F589B2005B1821 /* UITextViewExtensions.swift in Sources */,
+				226239AA2300547C007B70DE /* HeroDetailViewController.swift in Sources */,
 				22DE933722F589B2005B1821 /* BlockLongPress.swift in Sources */,
 				22DE933822F589B2005B1821 /* DateExtensions.swift in Sources */,
 				22DE936222F5AD5C005B1821 /* Heroes.swift in Sources */,
@@ -917,6 +947,7 @@
 				22DE92BC22F58576005B1821 /* AppConfig.swift in Sources */,
 				22DE932B22F589B2005B1821 /* UIViewControllerExtensions.swift in Sources */,
 				22DE933F22F589B2005B1821 /* UIImageViewExtensions.swift in Sources */,
+				226239AE230060A3007B70DE /* HeroesIdentifyTableViewCell.swift in Sources */,
 				22DE937122F5AE84005B1821 /* TFHppleElement.m in Sources */,
 				22DE932C22F589B2005B1821 /* FileManagerExtension.swift in Sources */,
 				22DE933922F589B2005B1821 /* UILabelExtensions.swift in Sources */,
@@ -932,6 +963,7 @@
 				22DE933C22F589B2005B1821 /* NSObjectExtensions.swift in Sources */,
 				22DE932222F589B2005B1821 /* StringExtensions.swift in Sources */,
 				22DE937622F5AE84005B1821 /* HTMLMapper.swift in Sources */,
+				226239B1230060E4007B70DE /* UITableView.swift in Sources */,
 				22DE932422F589B2005B1821 /* BlockButton.swift in Sources */,
 				22DE932E22F589B2005B1821 /* UIImageExtensions.swift in Sources */,
 			);
