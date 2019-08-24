@@ -18,7 +18,14 @@ class Heroes: NSObject, HTMLMappable {
     var attributes: [String: Any] = [String: Any]()
     var statisics: [String] = [String]()
     var type: String = ""
-    
+    var statisicsDic: [String: String] {
+        var dic = [String: String]()
+        for ob in statisics {
+            let list = ob.split(":")
+            dic[list.first ?? ""] = list.last
+        }
+        return dic
+    }
     var ref: DatabaseReference!
     
     required convenience init?(map: HTMLMap) {

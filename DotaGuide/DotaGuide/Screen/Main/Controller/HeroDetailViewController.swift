@@ -38,7 +38,7 @@ class HeroDetailViewController: UIViewController {
 //MARK: - UITableView
 extension HeroDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,6 +50,16 @@ extension HeroDetailViewController: UITableViewDataSource {
             return cell
         case 1:
             let cell = tableView.dequeueCell(ofType: HeroesAttributesTableViewCell.self, indexPath: indexPath)
+            cell.model = heroes
+            cell.selectionStyle = .none
+            return cell
+        case 2:
+            let cell = tableView.dequeueCell(ofType: AdvancedStatisicsTableViewCellTableViewCell.self, indexPath: indexPath)
+            cell.model = heroes
+            cell.selectionStyle = .none
+            return cell
+        case 3:
+            let cell = tableView.dequeueCell(ofType: AdvancedStatisicsTableViewCellTableViewCell.self, indexPath: indexPath)
             cell.model = heroes
             cell.selectionStyle = .none
             return cell
@@ -70,6 +80,7 @@ extension HeroDetailViewController: UITableViewDelegate {
 extension HeroDetailViewController {
     private func setUpTableView(){
         tableView.registerCellByNibs(strings: [HeroesIdentifyTableViewCell.className,
-                                               HeroesAttributesTableViewCell.className])
+                                               HeroesAttributesTableViewCell.className,
+                                               AdvancedStatisicsTableViewCellTableViewCell.className])
     }
 }

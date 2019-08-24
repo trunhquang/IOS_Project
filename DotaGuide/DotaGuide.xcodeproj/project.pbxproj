@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225FF7782310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF7762310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift */; };
+		225FF7792310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225FF7772310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib */; };
 		2262399222FFF95D007B70DE /* CommonFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262399122FFF95D007B70DE /* CommonFlowLayout.swift */; };
 		2262399622FFFED7007B70DE /* MainTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262399422FFFED7007B70DE /* MainTitleCollectionViewCell.swift */; };
 		2262399722FFFED7007B70DE /* MainTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2262399522FFFED7007B70DE /* MainTitleCollectionViewCell.xib */; };
@@ -127,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		0458D2574B5CCFCF93B167B2 /* Pods_DotaGuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotaGuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		225FF7762310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedStatisicsTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		225FF7772310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedStatisicsTableViewCellTableViewCell.xib; sourceTree = "<group>"; };
 		2262399122FFF95D007B70DE /* CommonFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFlowLayout.swift; sourceTree = "<group>"; };
 		2262399422FFFED7007B70DE /* MainTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		2262399522FFFED7007B70DE /* MainTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTitleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -311,6 +315,8 @@
 				226239B22300656E007B70DE /* HeroesAttributesTableViewCell.swift */,
 				226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */,
 				226239AD230060A3007B70DE /* HeroesIdentifyTableViewCell.xib */,
+				225FF7762310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift */,
+				225FF7772310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib */,
 			);
 			path = DetailHeroesCell;
 			sourceTree = "<group>";
@@ -752,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DE931222F589B2005B1821 /* LICENSE in Resources */,
+				225FF7792310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib in Resources */,
 				22DE92C822F58627005B1821 /* Main.storyboard in Resources */,
 				22DE92C722F58627005B1821 /* LaunchScreen.storyboard in Resources */,
 				226239B52300656E007B70DE /* HeroesAttributesTableViewCell.xib in Resources */,
@@ -946,6 +953,7 @@
 				22DE936022F59495005B1821 /* ItemsIndicatorInfoController.swift in Sources */,
 				22DE92BC22F58576005B1821 /* AppConfig.swift in Sources */,
 				22DE932B22F589B2005B1821 /* UIViewControllerExtensions.swift in Sources */,
+				225FF7782310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift in Sources */,
 				22DE933F22F589B2005B1821 /* UIImageViewExtensions.swift in Sources */,
 				226239AE230060A3007B70DE /* HeroesIdentifyTableViewCell.swift in Sources */,
 				22DE937122F5AE84005B1821 /* TFHppleElement.m in Sources */,
