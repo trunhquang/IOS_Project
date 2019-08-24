@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Database.database().isPersistenceEnabled = true
         
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().barTintColor = UIColor.gray
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: AppFonts.titleNavigationFont, NSAttributedString.Key.foregroundColor: AppColors.whiteColor]
+        UINavigationBar.appearance().tintColor = .gray
+        UINavigationBar.appearance().barTintColor = UIColor.clear
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: AppFonts.titleNavigationFont, NSAttributedString.Key.foregroundColor: UIColor.gray]
         return true
     }
 }

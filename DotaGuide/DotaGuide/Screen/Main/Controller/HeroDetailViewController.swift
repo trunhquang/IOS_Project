@@ -15,10 +15,8 @@ class HeroDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let image = UIImageView(frame: Screen.BOUNDS)
-        image.setImageWithURLString(string: "http://www.playcybergames.com/dota/images/body_background.jpg")
-        tableView.backgroundView = image
-        title = "HEROES"
+           title = "HEROES"
+        navigationItem.leftBarButtonItem = backBarButton()
         setUpTableView()
     }
     
@@ -38,7 +36,7 @@ class HeroDetailViewController: UIViewController {
 //MARK: - UITableView
 extension HeroDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,11 +52,6 @@ extension HeroDetailViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         case 2:
-            let cell = tableView.dequeueCell(ofType: AdvancedStatisicsTableViewCellTableViewCell.self, indexPath: indexPath)
-            cell.model = heroes
-            cell.selectionStyle = .none
-            return cell
-        case 3:
             let cell = tableView.dequeueCell(ofType: AdvancedStatisicsTableViewCellTableViewCell.self, indexPath: indexPath)
             cell.model = heroes
             cell.selectionStyle = .none

@@ -15,10 +15,11 @@ enum MapFrom {
 enum MapType {
     case ArrayObject
     case Object
-    case Contents
+    case Contents // parsel contents Array
     case Content(Int)
     case Attributes(String)
     case Attribute(String, Int)
+//    case TFHppleElement
 }
 
 final class HTMLMap {

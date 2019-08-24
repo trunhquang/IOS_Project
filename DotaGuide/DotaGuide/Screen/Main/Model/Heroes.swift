@@ -53,19 +53,6 @@ class Heroes: NSObject, HTMLMappable {
         self.attributes = attributes
         self.statisics = statisics
         self.type = type
-//
-//        "id":id,
-//        "avatar": imageAvatar,
-//        "name": name,
-//        "subName": subName,
-//        "attributes":attributes,
-//        "statisics":statisics,
-//        "type":type
-        
-//        self.key = snapshot.key
-//        self.name = name
-//        self.addedByUser = addedByUser
-//        self.completed = completed
     }
     
     func mapping(map: HTMLMap) {

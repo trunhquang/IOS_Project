@@ -44,3 +44,13 @@ extension UIViewController {
         return controller
     }
 }
+
+extension UIViewController {
+    func backBarButton() -> UIBarButtonItem {
+        let backBarButton =  ErcBarButton()
+        backBarButton.actionBlock = {[weak self]  in
+            _ = self?.navigationController?.popViewController(animated: true)
+        }
+        return backBarButton
+    }
+}

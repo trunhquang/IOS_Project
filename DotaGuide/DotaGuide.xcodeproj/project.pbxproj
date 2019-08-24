@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		225FF7782310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF7762310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift */; };
 		225FF7792310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225FF7772310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib */; };
+		225FF77C231128F8006141F5 /* BackBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF77B231128F8006141F5 /* BackBarButton.swift */; };
+		225FF77E23112EEE006141F5 /* ItemAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF77D23112EEE006141F5 /* ItemAPI.swift */; };
+		225FF780231130A9006141F5 /* ItemIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF77F231130A9006141F5 /* ItemIds.swift */; };
+		225FF7822311373D006141F5 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225FF7812311373D006141F5 /* Items.swift */; };
 		2262399222FFF95D007B70DE /* CommonFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262399122FFF95D007B70DE /* CommonFlowLayout.swift */; };
 		2262399622FFFED7007B70DE /* MainTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262399422FFFED7007B70DE /* MainTitleCollectionViewCell.swift */; };
 		2262399722FFFED7007B70DE /* MainTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2262399522FFFED7007B70DE /* MainTitleCollectionViewCell.xib */; };
@@ -131,6 +135,10 @@
 		0458D2574B5CCFCF93B167B2 /* Pods_DotaGuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotaGuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		225FF7762310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedStatisicsTableViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		225FF7772310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedStatisicsTableViewCellTableViewCell.xib; sourceTree = "<group>"; };
+		225FF77B231128F8006141F5 /* BackBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackBarButton.swift; sourceTree = "<group>"; };
+		225FF77D23112EEE006141F5 /* ItemAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAPI.swift; sourceTree = "<group>"; };
+		225FF77F231130A9006141F5 /* ItemIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIds.swift; sourceTree = "<group>"; };
+		225FF7812311373D006141F5 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		2262399122FFF95D007B70DE /* CommonFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFlowLayout.swift; sourceTree = "<group>"; };
 		2262399422FFFED7007B70DE /* MainTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		2262399522FFFED7007B70DE /* MainTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTitleCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -277,6 +285,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		225FF77A231128F8006141F5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				225FF77B231128F8006141F5 /* BackBarButton.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		2262399022FFF94B007B70DE /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +315,7 @@
 		2262399E23000369007B70DE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				225FF77A231128F8006141F5 /* UIKit */,
 				2262399F23000379007B70DE /* ImageView.swift */,
 				226239A32300070C007B70DE /* UICollectionView.swift */,
 				226239A723001BDD007B70DE /* CollectionType.swift */,
@@ -465,6 +482,8 @@
 			children = (
 				22DE936122F5AD5C005B1821 /* Heroes.swift */,
 				226FDC5322F722F90086CBC1 /* Heroids.swift */,
+				225FF77F231130A9006141F5 /* ItemIds.swift */,
+				225FF7812311373D006141F5 /* Items.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -619,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				22DE937922F5B0C6005B1821 /* ThisAPI.swift */,
+				225FF77D23112EEE006141F5 /* ItemAPI.swift */,
 			);
 			name = Service;
 			path = SupportingFile/Service;
@@ -893,6 +913,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				226239A023000379007B70DE /* ImageView.swift in Sources */,
+				225FF77C231128F8006141F5 /* BackBarButton.swift in Sources */,
 				22DE934022F589B2005B1821 /* UIUserInterfaceSizeClassExtensions.swift in Sources */,
 				22DE92D422F58885005B1821 /* MainViewController.swift in Sources */,
 				22DE932522F589B2005B1821 /* UIColoredView.swift in Sources */,
@@ -915,9 +936,11 @@
 				226239A623000E42007B70DE /* UIViewController.swift in Sources */,
 				22DE937522F5AE84005B1821 /* Operators.swift in Sources */,
 				22DE933D22F589B2005B1821 /* UserDefaultsExtension.swift in Sources */,
+				225FF780231130A9006141F5 /* ItemIds.swift in Sources */,
 				22DE933622F589B2005B1821 /* UIWindowExtensions.swift in Sources */,
 				22DE937422F5AE84005B1821 /* HTMLMapable.swift in Sources */,
 				22DE932922F589B2005B1821 /* UISliderExtensions.swift in Sources */,
+				225FF7822311373D006141F5 /* Items.swift in Sources */,
 				22DE931422F589B2005B1821 /* CGRectExtensions.swift in Sources */,
 				22DE933E22F589B2005B1821 /* UIApplicationExtensions.swift in Sources */,
 				22DE937222F5AE84005B1821 /* XPathQuery.m in Sources */,
@@ -964,6 +987,7 @@
 				22DE931B22F589B2005B1821 /* TimerExtensions.swift in Sources */,
 				22DE931722F589B2005B1821 /* ArrayExtensions.swift in Sources */,
 				22DE932F22F589B2005B1821 /* UIViewExtensions.swift in Sources */,
+				225FF77E23112EEE006141F5 /* ItemAPI.swift in Sources */,
 				22DE931A22F589B2005B1821 /* CGPointExtensions.swift in Sources */,
 				22DE932322F589B2005B1821 /* UIStoryboardExtensions.swift in Sources */,
 				22DE933A22F589B2005B1821 /* UISwitchExtensions.swift in Sources */,

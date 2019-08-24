@@ -47,13 +47,6 @@ class HeroesIndicatorInfoController: IndicatorInfoController {
             self?.createHeroesData(datas: newItems)
             self?.setDataSource()
         }
-//        setDataSource()
-//        ThisAPI.getAllHeroID { [weak self] heroids in
-//            if let heroids = heroids {
-//                self?.addHerosToDB(heroesID: heroids)
-//            }
-//        }
-        
     }
 }
 
@@ -197,20 +190,4 @@ extension HeroesIndicatorInfoController {
         }
         return false
     }
-    
-//    func  addHerosToDB(heroesID: Heroids){
-//        let parseHTMLGroup = DispatchGroup()
-//        for id in heroesID.ids {
-//            if let realID = id.split("/").last?.split(".").first {
-//                parseHTMLGroup.enter()
-//                ThisAPI.search(key: realID) { (hero) in
-//                    parseHTMLGroup.leave()
-//                    hero?.addToFirebase(id: realID)
-//                }
-//                
-//            }
-//        }
-//        parseHTMLGroup.notify(queue: .main) { [weak self] in
-//        }
-//    }
 }

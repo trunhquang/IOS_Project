@@ -21,9 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body_background" translatesAutoresizingMaskIntoConstraints="NO" id="EmL-wz-OZw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uid-yP-2F1">
                                 <rect key="frame" x="0.0" y="117" width="414" height="619"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfS-Zb-Dez">
                                 <rect key="frame" x="0.0" y="64" width="414" height="50"/>
@@ -63,10 +66,14 @@
                         <constraints>
                             <constraint firstItem="vfS-Zb-Dez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8TX-fy-DYN"/>
                             <constraint firstItem="uid-yP-2F1" firstAttribute="top" secondItem="vfS-Zb-Dez" secondAttribute="bottom" constant="3" id="8ZW-Vo-B9f"/>
+                            <constraint firstItem="EmL-wz-OZw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OzG-E9-mjh"/>
+                            <constraint firstItem="EmL-wz-OZw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="STH-BH-Sca"/>
                             <constraint firstAttribute="trailing" secondItem="vfS-Zb-Dez" secondAttribute="trailing" id="aXv-8V-kYP"/>
                             <constraint firstItem="uid-yP-2F1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="idb-f1-yLX"/>
                             <constraint firstAttribute="trailing" secondItem="uid-yP-2F1" secondAttribute="trailing" id="j7W-kf-cqC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uid-yP-2F1" secondAttribute="bottom" id="qNO-ER-vsv"/>
+                            <constraint firstAttribute="trailing" secondItem="EmL-wz-OZw" secondAttribute="trailing" id="tAR-xV-HcH"/>
+                            <constraint firstAttribute="bottom" secondItem="EmL-wz-OZw" secondAttribute="bottom" id="uSc-T4-3yZ"/>
                             <constraint firstItem="vfS-Zb-Dez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v5x-P0-zEZ"/>
                         </constraints>
                     </view>
@@ -98,12 +105,12 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ya4-dI-8gl">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="N3n-p5-SWE" customClass="CommonFlowLayout" customModule="DotaGuide" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ya4-dI-8gl" firstAttribute="leading" secondItem="NHY-Jv-UgU" secondAttribute="leading" id="2Wd-Fd-kTq"/>
                             <constraint firstAttribute="trailing" secondItem="Ya4-dI-8gl" secondAttribute="trailing" id="Dm1-sm-L0f"/>
@@ -132,9 +139,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body_background" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-3P-Rjv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bFs-WI-qSr">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="6aG-aE-8qe" id="bRZ-Ve-CDv"/>
                                     <outlet property="delegate" destination="6aG-aE-8qe" id="cr0-JG-M8o"/>
@@ -144,8 +154,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bFs-WI-qSr" firstAttribute="leading" secondItem="GVc-Ko-oXn" secondAttribute="leading" id="6ON-VO-jZ7"/>
+                            <constraint firstAttribute="trailing" secondItem="bNW-3P-Rjv" secondAttribute="trailing" id="IfS-nU-pJv"/>
+                            <constraint firstAttribute="bottom" secondItem="bNW-3P-Rjv" secondAttribute="bottom" id="M4u-Hh-ARJ"/>
                             <constraint firstItem="bFs-WI-qSr" firstAttribute="top" secondItem="yuq-e7-OJz" secondAttribute="bottom" id="Ozx-zC-zmk"/>
+                            <constraint firstItem="bNW-3P-Rjv" firstAttribute="leading" secondItem="GVc-Ko-oXn" secondAttribute="leading" id="RT5-Gz-cXz"/>
                             <constraint firstItem="eNs-dO-eg1" firstAttribute="top" secondItem="bFs-WI-qSr" secondAttribute="bottom" id="cZF-9Y-onh"/>
+                            <constraint firstItem="bNW-3P-Rjv" firstAttribute="top" secondItem="GVc-Ko-oXn" secondAttribute="top" id="plm-Qd-kan"/>
                             <constraint firstAttribute="trailing" secondItem="bFs-WI-qSr" secondAttribute="trailing" id="s9u-Yt-uLc"/>
                         </constraints>
                     </view>
@@ -177,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="body_background" width="934" height="726"/>
         <image name="separator_main" width="500" height="45"/>
     </resources>
 </document>
