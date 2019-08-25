@@ -12,7 +12,7 @@ import FirebaseDatabase
 class Heroes: NSObject, HTMLMappable {
     var id = ""
     var imageAvatar: String = ""
-    var tables: [Table] = [Table]()
+    //var tables: [Table] = [Table]()
     var name: String = ""
     var subName: String = ""
     var attributes: [String: Any] = [String: Any]()
@@ -56,133 +56,6 @@ class Heroes: NSObject, HTMLMappable {
     }
     
     func mapping(map: HTMLMap) {
-        imageAvatar         <- map["//div[@id='heroes_display_wrap']//td/img", .TFHpple, .Attribute("src", 0)]
-        tables              <- map["//div[@id='heroes_display_wrap']//table", .TFHpple, .ArrayObject]
-        name = tables.first?.name ?? ""
-        subName = tables.first?.subName ?? ""
-        attributes = tables[1].attributes
-        statisics = tables[2].statisics
-        type = tables[1].type + " " + tables[2].type
-        statisics.append(contentsOf: tables[3].statisics)
-        //        print(tables[2].statisics)
-        //        print(tables[3].statisics)
-    }
-    
-    func addToFirebase(id: String){
-        if ref == nil {
-            ref = Database.database().reference(withPath: "Heros/\(id)")
-        }
-        self.id = id
-        ref.setValue(toAnyObject())
-    }
-    
-    func toAnyObject() -> Any {
-        return ["id":id,
-                "avatar": imageAvatar,
-                "name": name,
-                "subName": subName,
-                "attributes":attributes,
-                "statisics":statisics,
-                "type":type]
-    }
-}
-
-
-class Table: HTMLMappable {
-    var localMap: HTMLMap!
-    var type: String! = "Agility"
-    var name: String{
-        guard let map = localMap else {
-            return ""
-        }
-        var tmps: [String] = [String]()
-        tmps <- map["//h1", .TFHppleElement, .Contents]
-        var names = ""
-        for tmp in tmps {
-            names += "\(tmp) "
-        }
-        return names.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-    var subName: String{
-        guard let map = localMap else {
-            return ""
-        }
-        var tmps: [String] = [String]()
-        tmps <- map["//h6", .TFHppleElement, .Contents]
-        var names = ""
-        for tmp in tmps {
-            names += "\(tmp) "
-        }
-        return names.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-    
-    var attributes: [String: Any]{
-        guard let map = localMap else {
-            return ["":""]
-        }
         
-        var tmps: [String] = [String]()
-        tmps <- map["//h6", .TFHppleElement, .Contents]
-        var names = ""
-        for tmp in tmps {
-            names += "\(tmp.split(" ").joined(separator:" ")), "
-        }
-        let result = names.split(", ")
-        let images = self.images
-        if images.first!.contains("-c"){
-            type = "Strength"
-        }
-        if images.last!.contains("-c"){
-            type = "Intelligence"
-        }
-        var dic: [String: Any] = [String: Any]()
-        for (i,ob) in result.enumerated() {
-            let list = ob.split("\r\n")
-            if list.count == 2 {
-                dic[list.first!] = [list.last!, images[i]]
-            }
-        }
-        return dic
-    }
-    
-    var images: [String]{
-        guard let map = localMap else {
-            return [""]
-        }
-        var tmps: [String] = [String]()
-        tmps <- map["//h6//img", .TFHppleElement, .Attributes("src")]
-        return tmps
-    }
-    
-    
-    //Advanced Statisics
-    var statisics: [String]{
-        guard let map = localMap else {
-            return [""]
-        }
-        
-        var tmps: [String] = [String]()
-        tmps <- map["//tr", .TFHppleElement, .Contents]
-        var names = ""
-        for tmp in tmps {
-            var arr = [String]()
-            for ob in tmp.split("\r\n") {
-                let obx = ob.trimmed()
-                arr.append(obx)
-            }
-            names += "\(arr.joined(separator:":")),, "
-        }
-        let result = names.split(",, ")
-        type = result.first?.split(":").last
-        return result
-    }
-    
-    required convenience init?(map: HTMLMap) {
-        self.init()
-        localMap = map
-    }
-    
-    func mapping(map: HTMLMap) {
-    
     }
 }

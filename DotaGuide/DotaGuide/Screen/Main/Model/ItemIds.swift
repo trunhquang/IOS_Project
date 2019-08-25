@@ -15,9 +15,7 @@ class ItemIds: HTMLMappable {
     }
     
     func mapping(map: HTMLMap) {
-        ids <- map["//div[@class='items_image_s_background']/img", .TFHpple, .Attributes("src")]
-//        shops <- map["//div[@class='items_image_s_background']/img", .TFHpple, .Attributes("title")]
-     //   print(ids)
+
     }
 }
 

@@ -19,44 +19,15 @@ class ItemsIndicatorInfoController: IndicatorInfoController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        itemsRef.observe(.value) {[weak self] (dataSnapshot) in
-//            var newItems: [Items] = []
-//            for child in dataSnapshot.children {
-//                if let snapshot = child as? DataSnapshot,
-//                    let groceryItem = Items(snapshot: snapshot) {
-//                    newItems.append(groceryItem)
-//                }
-//            }
-//            print(newItems.count)
-////            self?.createHeroesData(datas: newItems)
-////            self?.setDataSource()
-//        }
-        ItemAPI.getAllItemsID { (items) in
-            if let items = items {
-                addHerosToDB(heroesID: items)
-            }
-        }
-        
-//        ItemAPI.parsel(key: "113") { (items) in
-////            parseHTMLGroup.leave()
-////            items?.addToFirebase(id: realID)
-//        }
-    }
-    
-    
-    func  addHerosToDB(heroesID: ItemIds){
-        let parseHTMLGroup = DispatchGroup()
-        for id in heroesID.ids {
-            if let realID = id.split("/").last?.split(".").first {
-                parseHTMLGroup.enter()
-                ItemAPI.parsel(key: realID) { (items) in
-                    parseHTMLGroup.leave()
-                    items?.addToFirebase(id: realID)
+        itemsRef.observe(.value) {[weak self] (dataSnapshot) in
+            var newItems: [Items] = []
+            for child in dataSnapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let groceryItem = Items(snapshot: snapshot) {
+                    newItems.append(groceryItem)
                 }
             }
-        }
-        parseHTMLGroup.notify(queue: .main) { [weak self] in
-            print("___________________________")
+            print(newItems.count)
         }
     }
 }
