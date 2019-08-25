@@ -30,6 +30,13 @@
 		226239B52300656E007B70DE /* HeroesAttributesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */; };
 		226FDC5422F722F90086CBC1 /* Heroids.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226FDC5322F722F90086CBC1 /* Heroids.swift */; };
 		226FDC5622F72BB50086CBC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 226FDC5522F72BB40086CBC1 /* GoogleService-Info.plist */; };
+		22C2D7062312A80300CC1948 /* ItemsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2D7052312A80300CC1948 /* ItemsDetailViewController.swift */; };
+		22C2D70D2312B4EB00CC1948 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2D70C2312B4EB00CC1948 /* RecipeView.swift */; };
+		22C2D70F2312B4FB00CC1948 /* RecipeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C2D70E2312B4FB00CC1948 /* RecipeView.xib */; };
+		22C2D7112312B9FF00CC1948 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2D7102312B9FF00CC1948 /* UIView.swift */; };
+		22C2D7132312BA3000CC1948 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2D7122312BA3000CC1948 /* String.swift */; };
+		22C2D7152312E43E00CC1948 /* DetailUsefulItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C2D7142312E43D00CC1948 /* DetailUsefulItemView.swift */; };
+		22C2D7172312E44800CC1948 /* DetailUsefulItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C2D7162312E44800CC1948 /* DetailUsefulItemView.xib */; };
 		22DE92A122F52B68005B1821 /* DotaGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE92A022F52B68005B1821 /* DotaGuideTests.swift */; };
 		22DE92AC22F52B68005B1821 /* DotaGuideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE92AB22F52B68005B1821 /* DotaGuideUITests.swift */; };
 		22DE92BC22F58576005B1821 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE92BB22F58576005B1821 /* AppConfig.swift */; };
@@ -156,6 +163,13 @@
 		226239B32300656E007B70DE /* HeroesAttributesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesAttributesTableViewCell.xib; sourceTree = "<group>"; };
 		226FDC5322F722F90086CBC1 /* Heroids.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroids.swift; sourceTree = "<group>"; };
 		226FDC5522F72BB40086CBC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		22C2D7052312A80300CC1948 /* ItemsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDetailViewController.swift; sourceTree = "<group>"; };
+		22C2D70C2312B4EB00CC1948 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		22C2D70E2312B4FB00CC1948 /* RecipeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeView.xib; sourceTree = "<group>"; };
+		22C2D7102312B9FF00CC1948 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		22C2D7122312BA3000CC1948 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		22C2D7142312E43D00CC1948 /* DetailUsefulItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUsefulItemView.swift; sourceTree = "<group>"; };
+		22C2D7162312E44800CC1948 /* DetailUsefulItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailUsefulItemView.xib; sourceTree = "<group>"; };
 		22DE928822F52B66005B1821 /* DotaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE929C22F52B68005B1821 /* DotaGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DotaGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DE92A022F52B68005B1821 /* DotaGuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaGuideTests.swift; sourceTree = "<group>"; };
@@ -289,6 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				225FF77B231128F8006141F5 /* BackBarButton.swift */,
+				22C2D7102312B9FF00CC1948 /* UIView.swift */,
+				22C2D7122312BA3000CC1948 /* String.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -466,6 +482,7 @@
 				22DE935D22F5946B005B1821 /* HeroesIndicatorInfoController.swift */,
 				226239A92300547C007B70DE /* HeroDetailViewController.swift */,
 				22DE935F22F59495005B1821 /* ItemsIndicatorInfoController.swift */,
+				22C2D7052312A80300CC1948 /* ItemsDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +511,10 @@
 				226239AB23005FBA007B70DE /* DetailHeroesCell */,
 				2262399322FFFE6B007B70DE /* MainItemCell */,
 				22DE92D522F58900005B1821 /* PagerTabCell */,
+				22C2D70C2312B4EB00CC1948 /* RecipeView.swift */,
+				22C2D7142312E43D00CC1948 /* DetailUsefulItemView.swift */,
+				22C2D7162312E44800CC1948 /* DetailUsefulItemView.xib */,
+				22C2D70E2312B4FB00CC1948 /* RecipeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -779,6 +800,8 @@
 			files = (
 				22DE931222F589B2005B1821 /* LICENSE in Resources */,
 				225FF7792310F9E0006141F5 /* AdvancedStatisicsTableViewCellTableViewCell.xib in Resources */,
+				22C2D7172312E44800CC1948 /* DetailUsefulItemView.xib in Resources */,
+				22C2D70F2312B4FB00CC1948 /* RecipeView.xib in Resources */,
 				22DE92C822F58627005B1821 /* Main.storyboard in Resources */,
 				22DE92C722F58627005B1821 /* LaunchScreen.storyboard in Resources */,
 				226239B52300656E007B70DE /* HeroesAttributesTableViewCell.xib in Resources */,
@@ -915,14 +938,17 @@
 				226239A023000379007B70DE /* ImageView.swift in Sources */,
 				225FF77C231128F8006141F5 /* BackBarButton.swift in Sources */,
 				22DE934022F589B2005B1821 /* UIUserInterfaceSizeClassExtensions.swift in Sources */,
+				22C2D7112312B9FF00CC1948 /* UIView.swift in Sources */,
 				22DE92D422F58885005B1821 /* MainViewController.swift in Sources */,
 				22DE932522F589B2005B1821 /* UIColoredView.swift in Sources */,
 				22DE933322F589B2005B1821 /* FloatingPointExtensions.swift in Sources */,
+				22C2D7152312E43E00CC1948 /* DetailUsefulItemView.swift in Sources */,
 				22DE933522F589B2005B1821 /* IntExtensions.swift in Sources */,
 				22DE934422F589B2005B1821 /* UIFontExtensions.swift in Sources */,
 				22DE92D922F58900005B1821 /* PagerTabCellButtonBarCell.swift in Sources */,
 				22DE935822F58B09005B1821 /* Constant.swift in Sources */,
 				226239A42300070C007B70DE /* UICollectionView.swift in Sources */,
+				22C2D7132312BA3000CC1948 /* String.swift in Sources */,
 				22DE931C22F589B2005B1821 /* BlockSwipe.swift in Sources */,
 				22DE932A22F589B2005B1821 /* URLExtensions.swift in Sources */,
 				22DE931522F589B2005B1821 /* CGFloatExtensions.swift in Sources */,
@@ -982,6 +1008,7 @@
 				22DE937122F5AE84005B1821 /* TFHppleElement.m in Sources */,
 				22DE932C22F589B2005B1821 /* FileManagerExtension.swift in Sources */,
 				22DE933922F589B2005B1821 /* UILabelExtensions.swift in Sources */,
+				22C2D70D2312B4EB00CC1948 /* RecipeView.swift in Sources */,
 				22DE932122F589B2005B1821 /* ErrorTypeExtensions.swift in Sources */,
 				22DE934122F589B2005B1821 /* UIDeviceExtensions.swift in Sources */,
 				22DE931B22F589B2005B1821 /* TimerExtensions.swift in Sources */,
@@ -997,6 +1024,7 @@
 				22DE937622F5AE84005B1821 /* HTMLMapper.swift in Sources */,
 				226239B1230060E4007B70DE /* UITableView.swift in Sources */,
 				22DE932422F589B2005B1821 /* BlockButton.swift in Sources */,
+				22C2D7062312A80300CC1948 /* ItemsDetailViewController.swift in Sources */,
 				22DE932E22F589B2005B1821 /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

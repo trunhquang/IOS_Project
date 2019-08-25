@@ -38,7 +38,7 @@ class MainViewController: BaseButtonBarPagerTabStripViewController<PagerTabCellB
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let itemVC = ItemsIndicatorInfoController()
+        let itemVC = ItemsIndicatorInfoController.instantiateFromStoryboard(storyboardName: "Main")
         let heroesVC = HeroesIndicatorInfoController.instantiateFromStoryboard(storyboardName: "Main")
         return [heroesVC, itemVC]
     }

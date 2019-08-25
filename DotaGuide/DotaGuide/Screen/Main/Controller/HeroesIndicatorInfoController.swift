@@ -24,11 +24,7 @@ class HeroesIndicatorInfoController: IndicatorInfoController {
     
     var heroesRef = Database.database().reference(withPath: "Heros")
     
-    private var heroes: [Heroes]?{
-        didSet{
-            
-        }
-    }
+    private var heroes: [Heroes]?
     private var groups: [[Heroes]]?
     private var titlesIndex: [Int]?
     private var currentIndex = 0

@@ -15,7 +15,7 @@ class HeroDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           title = "HEROES"
+        title = "HEROES"
         navigationItem.leftBarButtonItem = backBarButton()
         setUpTableView()
     }

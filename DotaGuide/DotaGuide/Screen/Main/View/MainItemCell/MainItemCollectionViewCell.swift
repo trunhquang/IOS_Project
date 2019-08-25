@@ -18,6 +18,12 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var item: Items!{
+        didSet {
+            imageView.setImageWithURLString(string: item.imageAvatar)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

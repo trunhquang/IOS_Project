@@ -40,13 +40,12 @@ class Items: HTMLMappable {
         self.init()
         self.ref = snapshot.ref
         self.id = id
-        self.imageAvatar = baseURL + avatar
+        self.imageAvatar = avatar
         self.name = name
         self.cost = cost
         self.sortDes = sortDes
         self.dicInfo = dicInfo
     }
-    
     
     func mapping(map: HTMLMap) {
     }
