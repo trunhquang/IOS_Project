@@ -245,7 +245,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o12-MD-mZd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="516"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="496"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hXc-Ax-EA9">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
@@ -468,7 +468,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWF-CR-re2">
-                                                <rect key="frame" x="0.0" y="418.66666666666669" width="414" height="67.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="418.66666666666669" width="414" height="57.333333333333314"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="4E3-9b-54h">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
@@ -496,14 +496,14 @@
                                                     <constraint firstItem="4fZ-UN-cbQ" firstAttribute="leading" secondItem="nWF-CR-re2" secondAttribute="leading" constant="10" id="UfT-Nh-vX1"/>
                                                     <constraint firstItem="4E3-9b-54h" firstAttribute="top" secondItem="nWF-CR-re2" secondAttribute="top" id="XXb-91-l3g"/>
                                                     <constraint firstItem="cSd-CK-OV7" firstAttribute="centerX" secondItem="nWF-CR-re2" secondAttribute="centerX" id="YDv-zk-Lry"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4fZ-UN-cbQ" secondAttribute="bottom" constant="10" id="dp0-yk-8wO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4fZ-UN-cbQ" secondAttribute="bottom" id="dp0-yk-8wO"/>
                                                     <constraint firstItem="4E3-9b-54h" firstAttribute="leading" secondItem="nWF-CR-re2" secondAttribute="leading" id="dwa-1W-I2F"/>
                                                     <constraint firstAttribute="trailing" secondItem="4fZ-UN-cbQ" secondAttribute="trailing" constant="10" id="nsY-iE-yIR"/>
                                                     <constraint firstItem="4fZ-UN-cbQ" firstAttribute="top" secondItem="4E3-9b-54h" secondAttribute="bottom" constant="5" id="wvf-wy-RDI"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9ht-mN-paC">
-                                                <rect key="frame" x="0.0" y="496" width="414" height="10"/>
+                                                <rect key="frame" x="0.0" y="476" width="414" height="10"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mwz-gr-GDc">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
@@ -523,7 +523,7 @@
                                             <constraint firstAttribute="trailing" secondItem="9ht-mN-paC" secondAttribute="trailing" id="Fak-JQ-RXL"/>
                                             <constraint firstItem="fcU-ws-4H7" firstAttribute="top" secondItem="hnR-Al-IW5" secondAttribute="bottom" constant="20" id="I9O-Tw-ghq"/>
                                             <constraint firstItem="Ykr-qN-fdH" firstAttribute="leading" secondItem="o12-MD-mZd" secondAttribute="leading" id="IJd-d5-Mzz"/>
-                                            <constraint firstItem="9ht-mN-paC" firstAttribute="top" secondItem="nWF-CR-re2" secondAttribute="bottom" constant="10" id="J6H-jq-SQe"/>
+                                            <constraint firstItem="9ht-mN-paC" firstAttribute="top" secondItem="nWF-CR-re2" secondAttribute="bottom" id="J6H-jq-SQe"/>
                                             <constraint firstAttribute="trailing" secondItem="nWF-CR-re2" secondAttribute="trailing" id="K2q-JV-YCa"/>
                                             <constraint firstItem="fcU-ws-4H7" firstAttribute="leading" secondItem="o12-MD-mZd" secondAttribute="leading" id="LEV-jk-w7L"/>
                                             <constraint firstAttribute="trailing" secondItem="hnR-Al-IW5" secondAttribute="trailing" id="Lz8-Vt-t6I"/>
