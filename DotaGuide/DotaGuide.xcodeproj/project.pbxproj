@@ -1203,16 +1203,18 @@
 			baseConfigurationReference = 2BB840A556542241FF3D3CDA /* Pods-DotaGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S6Y46CYC65;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BLNM3AC89P;
 				INFOPLIST_FILE = "$(SRCROOT)/DotaGuide/SupportingFile/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trungquang.heroesDota;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.com.free.dotaguide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Defense of the Ancients";
 				SWIFT_OBJC_BRIDGING_HEADER = "DotaGuide/SupportingFile/DotaGuide-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1224,16 +1226,18 @@
 			baseConfigurationReference = DC235EC7FB1FCF8B248CFA74 /* Pods-DotaGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S6Y46CYC65;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BLNM3AC89P;
 				INFOPLIST_FILE = "$(SRCROOT)/DotaGuide/SupportingFile/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.trungquang.heroesDota;
+				PRODUCT_BUNDLE_IDENTIFIER = mobile.com.free.dotaguide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Defense of the Ancients";
 				SWIFT_OBJC_BRIDGING_HEADER = "DotaGuide/SupportingFile/DotaGuide-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
